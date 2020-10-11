@@ -1,8 +1,8 @@
 module Mutations
   class AddLanguage < Mutations::BaseMutation
-    argument :params, Types::Models::LanguageAttributes, required: true
+    argument :params, Types::Input::LanguageInputType, required: true
 
-    field :language, Types::Models::LanguageType, null: false
+    field :language, Types::LanguageType, null: false
 
     def resolve(params:)
       language_params = Hash params
@@ -18,3 +18,4 @@ module Mutations
     end
   end
 end
+
